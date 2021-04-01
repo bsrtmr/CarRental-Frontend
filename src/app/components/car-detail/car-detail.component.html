@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div *ngFor="let carimage of carImages; let i = index" [ngClass]="getSliderClassName(i)" data-bs-interval="10000">
+                        <img src="{{ urlPath }}/{{ carimage.imagePath }}" width="100%" height="500px" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Marka</th>
+                        <th>Model</th> 
+                        <th>Renk</th>
+                        <th>Fiyat</th>
+                        <th>Açıklama</th>
+                        <th>Açıklama</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cardetail of carDetails">
+                        <td>{{cardetail.carId}}</td>
+                        <td>{{cardetail.brandName}}</td>
+                        <td>{{cardetail.modelYear}}</td>
+                        <td>{{cardetail.colorName}}</td>
+                        <td>{{cardetail.dailyPrice}}</td>
+                        <td>{{cardetail.description}}</td>
+                        <td><button type="button" class="btn btn-secondary">Kirala</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
